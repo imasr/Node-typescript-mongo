@@ -5,13 +5,12 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run serve",
-    "build": "tsc",
+    "prod": "tsc && node dist/server.js",
     "serve": "tsc && concurrently \"tsc -w\" \"node dist/server.js\"",
     "nodemon": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
     "debug": "tsc && concurrently \"tsc -w\" \"nodemon --inspect src/server.ts\""
   },
   "dependencies": {
-    "@types/jsonwebtoken": "^8.3.7",
     "bcryptjs": "2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -19,6 +18,7 @@
     "mongoose": "^5.8.10"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.3.7",
     "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.17.1",
     "@types/eslint": "^6.1.7",

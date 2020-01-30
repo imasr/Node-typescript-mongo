@@ -11,5 +11,5 @@ export const userSignup = async (req: IUserRequest) => {
 };
 
 export const userGet = async (req: IUserRequest) => {
-  return await signup(req);
+  return await getUser(req);
 };

@@ -12,6 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 routes.map(route => app.use(route.path, route.handler));
 
 app.listen(process.env.PORT, () => {
-  console.log(`Express server listening on port ${process.env.PORT}`);
+  console.log(`Expresssss server listening on port ${process.env.PORT}`);
   console.log(`Environment : ${process.env.NODE_ENV}`);
 });

@@ -7,8 +7,9 @@
     "start": "npm run serve",
     "prod": "tsc && node dist/server.js",
     "serve": "tsc && concurrently \"tsc -w\" \"node dist/server.js\"",
-    "nodemon": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
-    "debug": "tsc && concurrently \"tsc -w\" \"nodemon --inspect src/server.ts\""
+    "nodemon": "tsc && concurrently \"tsc -w\" \"npm run copy\" \"nodemon dist/server.js\"",
+    "debug": "nodemon --inspect src/server.ts\"",
+    "copy": "copyfiles -u 1 src/assets/**/* dist/"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",
@@ -18,15 +19,16 @@
     "mongoose": "^5.8.10"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^8.3.7",
     "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.17.1",
     "@types/eslint": "^6.1.7",
     "@types/express": "^4.17.2",
+    "@types/jsonwebtoken": "^8.3.7",
     "@types/mongoose": "^5.7.0",
     "@types/node": "^13.5.2",
-    "eslint": "^6.8.0",
     "concurrently": "^5.1.0",
+    "copyfiles": "^2.2.0",
+    "eslint": "^6.8.0",
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
